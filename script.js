@@ -122,7 +122,7 @@ const makeEditable = cell => {
         cell.innerText = '';
         input.addEventListener('blur', () => cancelEditable(cell));
         input.addEventListener('keyup', event => {
-            if (event.keyCode === 13 || event.keyCode === 27) {
+            if (event.keyCode === 13 || event.keyCode === 27) {   // enter or ESC
                 cancelEditable(cell);
             }
         });
@@ -162,7 +162,9 @@ const addRow = table => {
     }
     let cell = document.createElement('td');
     let deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Usuń';
+    const src = './assets/delete-icon.svg';
+    deleteButton.innerHTML = `<img src="${src}"/>`;
+    deleteButton.children[0].classList.add('svg-filter');
     deleteButton.classList.add('centered', 'btn', 'btn-danger');
     deleteButton.addEventListener('click', () => removeRow(table, row))
     cell.appendChild(deleteButton);

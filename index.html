@@ -1,0 +1,81 @@
+<html lang="pl-pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <a class="navbar-brand" href="#">Logo</a>
+    <div>
+      <a href="#" id="linkToRegister" class="nav-link active" onclick="push(this)">Zarejestruj się</a>
+      <a href="#" id="linkToTable" class="nav-link" onclick="push(this)">Tabela</a>
+    </div>
+  </nav>
+  <div id="registerFormWrapper" class="wrapper">
+    <form id="registerForm">
+      <div class="alert alert-success" role="alert" id="alertSuccess">
+          Wysłano formularz
+      </div>
+      <div class="form-group">
+        <label for="name">Imię</label>
+        <div class="alert alert-danger" role="alert">
+            Pole wymagane
+        </div>
+        <input type="text" class="form-control" id="name" placeholder="Imię">
+      </div>
+      <div class="form-group">
+        <label for="surname">Nazwisko</label>
+        <div class="alert alert-danger" role="alert">
+           Pole wymagane
+        </div>
+        <input type="text" class="form-control" id="surname" placeholder="Nazwisko">
+      </div>
+      <div class="form-group">
+        <label for="Email">Email address</label>
+        <div class="alert alert-danger" role="alert">
+            To nie jest prawidłowy adres email
+        </div>
+        <input type="email" class="form-control" id="email" placeholder="email">
+      </div>
+      <div class="form-group">
+          <label for="birthdate">Data urodzenia</label>
+          <div class="alert alert-danger" role="alert">
+              Niepoprawna data urodzenia
+          </div>
+          <input type="date" class="form-control" id="birthdate" placeholder="Data urodzenia">
+        </div>
+      <div class="form-group">
+        <label for="password">Hasło</label>
+        <div class="alert alert-danger" role="alert">
+            Hasło musi mieć conajmniej 8 znaków oraz co najmniej jedną cyfrę, wielką literę i mała literę
+        </div>
+        <input type="password" class="form-control" id="password" placeholder="Hasło">
+      </div>
+      <div class="form-group">
+          <label for="confirmPassword">Hasło</label>
+          <div class="alert alert-danger" role="alert">
+              Hasła muszą się zgadzać
+          </div>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Potwierdź hasło">
+      </div>
+      <div class="form-group">
+        <label for="">Opis</label>
+        <div class="alert alert-danger" role="alert">
+            Opis musi zawierać co najmniej 10 znaków
+        </div>
+        <textarea class="form-control" id="description" rows="3"></textarea>
+      </div>
+      <input type="submit" value="Zarejestruj się" class="btn btn-secondary"></input>
+    </form>
+  </div>
+  <div id="tableWrapper" class="hidden"></div>
+</body>
+<script src="script.js"></script>
+</html>
